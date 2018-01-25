@@ -1,4 +1,4 @@
-                                               Random Number Generation Algorithm(Explanation)
+Random Number Generation Algorithm(Explanation)
 
 A custom random number generation algorithm which is 73% biased to the higher number.
 
