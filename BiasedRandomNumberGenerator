@@ -1,0 +1,19 @@
+import time;                                                  # Import time module
+import math;                                                  # Import Math module
+n = int(raw_input('Enter Total number to generate : '));      # Total numbers to generate
+a = int(raw_input('Enter value of a : '));                    # Lower bound of range (inclusive)
+b = int(raw_input('Enter value of b : '));                    # Upper bound of range (inclusive)
+p = int(0.73*n);                                              # Total numbers of generated number which are >= median of range (73% of n)
+q = math.ceil(0.27*n);                                        # Total numbers of generated number which are < median of range (27% of n)
+num = a;                                                      # Initialize num variable with lower bound a        
+	
+while p!=0 or q!=0:                                               
+	num = (num+int(time.time()))%(b+1);                         # Generating the random number with the help of system time
+	if num < a:                                                 # If Generated number is less than lower bound a than regenerate another number
+		continue;
+	if num < (a+b)/2 and q!=0:                                  # If num>a and less than median and q is non-zero than print num and decrease q by 1
+		print num;
+		q-=1;
+	if num >= (a+b)/2 and p!=0:                                 # If num>a and greater than and equal to median and p is non-zero than print num and decrease p by 1
+		print num;
+		p-=1;
